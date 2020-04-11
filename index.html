@@ -12,8 +12,8 @@
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="images/logo192.png" />
     <link rel="manifest" href="manifest.json" />
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.1/css/bulma.min.css"> -->
-    <link rel="stylesheet" type="text/css" href="css/bulma.min.css">
+    <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.1/css/bulma.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/bulma.min.css"> -->
     <link rel="stylesheet" href="css/main.css">
     <title>COVID-19 Estimator</title>
   </head>
@@ -100,7 +100,7 @@
           <div class="field">
             <div class="buttons">
               <button type="submit" aria-label="submit" class="button is-success" accesskey="g"
-                data-go-estimate="">Estimate</button>
+                data-go-estimate="" style="background-color:#345899;">Estimate</button>
             </div>
           </div>
         </form>
@@ -136,10 +136,11 @@
           </section>
         </div>
       </section>
+      <footer>KayConsult &copy; 2020</footer>
     </main>
 
-    <!-- <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script> -->
-    <script defer src="js/fontawesome.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <!-- <script defer src="js/fontawesome.js"></script> -->
     <script defer src="js/main.js"></script>
     <script>
       if ('serviceWorker' in navigator) {
