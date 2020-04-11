@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content=" covid 19 impact estimator, analysis and projection">
+    <meta name="keywords"
+      content="covid19, corona virus, estimator, covid-19-estimator, covid 19 estimator for advisory, covid 19 impact projection, covid 19 impact analysis, covid 19 impact analysis and projectionand projection">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="author" content="Kamil Balogun | kamilbalogun1@gmail.com | +2348135612442">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/logo192.png" />
+    <link rel="manifest" href="manifest.json" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.1/css/bulma.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/bulma.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>COVID-19 Estimator</title>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app effectively as some features may not be implemented without
+      it.</noscript>
+    <main class="box main-container">
+      <header class="box is-auto">
+        <img class="logo" src="images/covid.jpg" alt="corona virus disease (covid-19) structure image" aria-label="banner-image">
+        <div>
+          <h1 class="title theme-color">Covid-19 Estimator App</h1>
+          <h3 class="subtitle">Infection Estimate</h3>
+        </div>
+      </header>
+
+      <section>
+        <form name="covid-19-estimator" data-form-estimator aria-label="covid-19-estimator-form">
+          <div class="field">
+            <label class="label theme-color" for="population">Population</label>
+            <div class="control has-icons-left">
+              <input class="input" type="number" id="population" name="population" accesskey="p" data-population
+                required pattern="[0-9() ]{5,15}">
+              <span class="icon is-small is-left">
+                <i class="fas fa-users"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="columns is-multiline">
+            <div class="column is-12-tablet is-6-desktop">
+              <label class="label theme-color" for="reported-cases">Reported Cases</label>
+              <div class="control has-icons-left">
+                <input class="input" type="number" id="reported-cases" name="reported-cases" accesskey="c"
+                  data-reported-cases required>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-file-alt"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="column is-12-tablet is-6-desktop">
+              <label class="label theme-color" for="total-hospital-beds">Total Hospital Beds</label>
+              <div class="control has-icons-left">
+                <input class="input" type="number" id="total-hospital-beds" name="total-hospital-beds" accesskey="b"
+                  data-total-hospital-beds required>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-bed"></i>
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="columns is-multiline">
+            <div class="column is-12-tablet is-6-desktop">
+              <label class="label theme-color" for="time-to-elapse">Time To Elapse</label>
+              <div class="control has-icons-left">
+                <input class="input" type="number" id="time-to-elapse" name="time-to-elapse" accesskey="m"
+                  data-time-to-elapse required>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-clock"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="column is-12-tablet  is-6-desktop">
+              <label class="label theme-color" for="period-type"> Period Type</label>
+              <div class="control has-icons-left">
+                <div class="select">
+                  <select id="period-type" name="period-type" accesskey="t" data-period-type required>
+                    <option value="">Please select period</option>
+                    <option value="days">days</option>
+                    <option value="weeks">weeks</option>
+                    <option value="months">months</option>
+                  </select>
+                </div>
+                <span class="icon is-small is-left">
+                  <i class="fas fa-calendar-alt"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="buttons">
+              <button type="submit" aria-label="submit" class="button is-success" accesskey="g"
+                data-go-estimate="">Estimate</button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="box impacts is-hidden">
+        <header>
+          <h2 class="title theme-color">Covid 19 Estimator Analysis</h2>
+        </header>
+        <div class="columns is-multiline">
+          <!-- Impact Cases-->
+          <section class="column is-12-tablet is-6-desktop">
+            <header>
+              <h3 class="subtitle theme-color">Impact Cases</h3>
+            </header>
+            <table class="table is-hoverable is-fullwidth">
+              <tbody id="impact">
+              </tbody>
+            </table>
+          </section>
+
+          <!-- Severe Impact Cases -->
+          <section class="column is-12-tablet is-6-desktop">
+            <header>
+              <h3 class="subtitle theme-color">Severe Impact Cases</h3>
+            </header>
+            <table class="table is-hoverable is-fullwidth">
+              <thead></thead>
+              <tfoot></tfoot>
+              <tbody id="severeImpact">
+              </tbody>
+            </table>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script> -->
+    <script defer src="js/fontawesome.js"></script>
+    <script defer src="js/main.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('service-worker.js');
+        });
+      }
+    </script>
+  </body>
+</html>
